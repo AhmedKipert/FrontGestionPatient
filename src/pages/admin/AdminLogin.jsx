@@ -21,7 +21,7 @@ export default function AdminLogin() {
         e.preventDefault();
 
         adminLogin(admin)
-        .then(msg => msg.code === 200 ? navigate('/accueil') : setMessage(msg.message))
+        .then(msg => msg.code === 200 ? navigate('https://backgestionpatient.up.railway.app/accueil') : setMessage(msg.message))
         .catch(console.log);
     }
 
