@@ -1,7 +1,7 @@
 
 export const getMedecins = async () => {
     try {
-        const res = await fetch("http://localhost:3002/medecins", {
+        const res = await fetch("https://backgestionpatient.up.railway.app/medecins", {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${sessionStorage.getItem('token')}`
@@ -19,7 +19,7 @@ export const getMedecins = async () => {
 
 // Ajouter
 export const postMedecin = async (medecin) => {
-    const res = await fetch("http://localhost:3002/medecin/ajouter", {
+    const res = await fetch("https://backgestionpatient.up.railway.app/medecin/ajouter", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

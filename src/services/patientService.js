@@ -2,7 +2,7 @@
 
 export const getPatients = async () => {
     try {
-        const res = await fetch("http://localhost:3002/patients", {
+        const res = await fetch("https://backgestionpatient.up.railway.app/patients", {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
