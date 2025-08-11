@@ -14,7 +14,7 @@ export default function ListePatient() {
     useEffect(() => {
         getPatients()
             .then(data => { 
-                if(data.code !== 200) return navigate('/admin/login');
+                if(data.code !== 200) return navigate('https://backgestionpatient.up.railway.app/admin/login');
                 setPatients(data.patients); setFiltre(data.patients);
             })
             .catch(console.error);

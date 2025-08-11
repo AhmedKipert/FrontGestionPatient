@@ -20,7 +20,7 @@ export const getPatients = async () => {
 
 // Ajouter
 export const postPatient = async (patient) => {
-    const res = await fetch("http://localhost:3002/patient/ajouter", {
+    const res = await fetch("https://backgestionpatient.up.railway.app/patient/ajouter", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -35,7 +35,7 @@ export const postPatient = async (patient) => {
 
 // SUPPRIMER
 export const deletePatient = async (id) => {
-    const res = await fetch(`http://localhost:3002/patient/supprimer/${id}`, { method: "DELETE" });
+    const res = await fetch(`https://backgestionpatient.up.railway.app/patient/supprimer/${id}`, { method: "DELETE" });
     if(!res.ok) throw new Error("Erreur de suppression du patient");
 
     const data = await res.json();
@@ -43,7 +43,7 @@ export const deletePatient = async (id) => {
 
 // MODIFIER
 export const updatePatient = async(id, data) => {
-    const res = await fetch(`http://localhost:3002/patient/modifier/${id}`, {
+    const res = await fetch(`https://backgestionpatient.up.railway.app/patient/modifier/${id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
@@ -58,7 +58,7 @@ export const updatePatient = async(id, data) => {
 // RECUPERER UN
 export const getPatient = async(id) => {
     try {
-        const res = await fetch(`http://localhost:3002/patient/${id}`);
+        const res = await fetch(`https://backgestionpatient.up.railway.app/patient/${id}`);
         return await res.json();
 
     } catch (error) {
