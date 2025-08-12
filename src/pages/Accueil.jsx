@@ -1,9 +1,15 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import loader from "../assets/loader.svg"
 
 export default function Accueil() {
+    const [loading, setLoading] = useState(true);
+
+    if(loading) return <div className="full flex-full"><img src={loader} width={80} alt="loading" /></div>
+    
     return (
         <div className="page bg-primary full flex-full">
-            <img src="/logopharma.jpg" style={{width: "200px", borderRadius: "10px"}} alt="" />
+            <img src="/logopharma.jpg" style={{ width: "200px", borderRadius: "10px" }} onLoad={() => setLoading(false)} alt="" />
             <div className="flex-col gap-lg">
                 <h1 className="text-white text-center">Bienvenue sur votre application de gestion des patient</h1>
                 <div className="flex justify-center">
