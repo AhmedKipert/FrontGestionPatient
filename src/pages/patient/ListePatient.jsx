@@ -4,6 +4,7 @@ import '../../styles/ListePatient.css'
 import { Link, useAsyncError, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import '../../styles/all.min.css';
+import loader from '../../assets/loader.svg'
 
 export default function ListePatient() {
     const navigate = useNavigate();
@@ -41,6 +42,12 @@ export default function ListePatient() {
     const handleUpdate = (id) => {
         navigate(`/patient/${id}`)
     }
+
+    if(loading) return (
+        <div className="full flex-full">
+            <img src={loader} height={80}/>
+        </div>
+    )
 
     return (
         <div>
