@@ -38,7 +38,7 @@ export default function AjouterRendezvous() {
 
         postRendezvous(rendezvous)
             .then(data => {
-                navigate('/rendezvous/liste');
+                window.location.href = '/rendezvous/liste';
                 setNotification(data.message);
             })
             .catch(error => alert(error.message));

@@ -2,7 +2,7 @@
 // Connexion
 export const adminLogin = async(data)=> {
     try {
-        const res = await fetch('https://backgestionpatient.up.railway.app/admin/login', {
+        const res = await fetch('https://backgestionpatient.up.railway.app/api/admin/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -23,7 +23,7 @@ export const adminLogin = async(data)=> {
 // Inscription
 export const adminSignup = async(data)=> {
     try {
-        const res = await fetch('https://backgestionpatient.up.railway.app/admin/signup', {
+        const res = await fetch('https://backgestionpatient.up.railway.app/api/admin/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

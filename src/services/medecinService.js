@@ -1,7 +1,7 @@
 
 export const getMedecins = async () => {
     try {
-        const res = await fetch("https://backgestionpatient.up.railway.app/medecins", {
+        const res = await fetch("https://backgestionpatient.up.railway.app/api/medecins", {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${sessionStorage.getItem('token')}`
@@ -19,7 +19,7 @@ export const getMedecins = async () => {
 
 // Ajouter
 export const postMedecin = async (medecin) => {
-    const res = await fetch("https://backgestionpatient.up.railway.app/medecin/ajouter", {
+    const res = await fetch("https://backgestionpatient.up.railway.app/api/medecin/ajouter", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -35,7 +35,7 @@ export const postMedecin = async (medecin) => {
 // SUPPRIMER
 export const deleteMedecin = async (id) => {
     try {
-        const res = await fetch(`https://backgestionpatient.up.railway.app/supprimer/${id}`, { method: "DELETE" });
+        const res = await fetch(`https://backgestionpatient.up.railway.app/api/supprimer/${id}`, { method: "DELETE" });
         if (!res.ok) throw new Error("Erreur de suppression du medecin");
 
         return await res.json();
@@ -48,7 +48,7 @@ export const deleteMedecin = async (id) => {
 
 // MODIFIER
 export const updateMedecin = async (id, data) => {
-    const res = await fetch(`https://backgestionpatient.up.railway.app/medecin/modifier/${id}`, {
+    const res = await fetch(`https://backgestionpatient.up.railway.app/api/medecin/modifier/${id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
@@ -63,7 +63,7 @@ export const updateMedecin = async (id, data) => {
 // RECUPERER UN
 export const getMedecin = async (id) => {
     try {
-        const res = await fetch(`https://backgestionpatient.up.railway.app/medecin/${id}`);
+        const res = await fetch(`https://backgestionpatient.up.railway.app/api/medecin/${id}`);
         return await res.json();
 
     } catch (error) {

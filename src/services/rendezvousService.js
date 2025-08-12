@@ -2,7 +2,7 @@
 // Liste
 export const getRendezvouss = async () => {
     try {
-        const res = await fetch("https://backgestionpatient.up.railway.app/rendezvouss", {
+        const res = await fetch("https://backgestionpatient.up.railway.app/api/rendezvouss", {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -22,7 +22,7 @@ export const getRendezvouss = async () => {
 // Ajouter
 export const postRendezvous = async (rendezvous) => {
     try {
-        const res = await fetch("https://backgestionpatient.up.railway.app/rendezvous/ajouter", {
+        const res = await fetch("https://backgestionpatient.up.railway.app/api/rendezvous/ajouter", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -45,7 +45,7 @@ export const postRendezvous = async (rendezvous) => {
 // SUPPRIMER
 export const deleteRendezvous = async (id) => {
     try {
-        const res = await fetch(`https://backgestionpatient.up.railway.app/rendezvous/supprimer/${id}`, { method: "DELETE" });
+        const res = await fetch(`https://backgestionpatient.up.railway.app/api/rendezvous/supprimer/${id}`, { method: "DELETE" });
         if (!res.ok) throw new Error("Erreur de suppression du rendezvous");
 
         return await res.json();
@@ -59,7 +59,7 @@ export const deleteRendezvous = async (id) => {
 // MODIFIER
 export const updateRendezvous = async (id, data) => {
     try {
-        const res = await fetch(`https://backgestionpatient.up.railway.app/rendezvous/modifier/${id}`, {
+        const res = await fetch(`https://backgestionpatient.up.railway.app/api/rendezvous/modifier/${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -79,7 +79,7 @@ export const updateRendezvous = async (id, data) => {
 // RECUPERER UN
 export const getRendezvous = async (id) => {
     try {
-        const res = await fetch(`https://backgestionpatient.up.railway.app/rendezvous/${id}`);
+        const res = await fetch(`https://backgestionpatient.up.railway.app/api/rendezvous/${id}`);
         return await res.json();
 
     } catch (error) {

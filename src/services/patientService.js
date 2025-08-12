@@ -2,7 +2,7 @@
 
 export const getPatients = async () => {
     try {
-        const res = await fetch("https://backgestionpatient.up.railway.app/patients", {
+        const res = await fetch("https://backgestionpatient.up.railway.app/api/patients", {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -20,7 +20,7 @@ export const getPatients = async () => {
 
 // Ajouter
 export const postPatient = async (patient) => {
-    const res = await fetch("https://backgestionpatient.up.railway.app/patient/ajouter", {
+    const res = await fetch("https://backgestionpatient.up.railway.app/api/patient/ajouter", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

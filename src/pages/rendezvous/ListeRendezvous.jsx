@@ -37,7 +37,7 @@ export default function ListeRendezvous() {
     }
 
     const handleUpdate = (id) => {
-        navigate(`https://backgestionpatient.up.railway.app/rendezvous/${id}`);
+        window.location.href = `https://backgestionpatient.up.railway.app/rendezvous/${id}`;
     }
 
     return (
