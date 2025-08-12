@@ -15,7 +15,7 @@ export default function ListeMedecin() {
         getMedecins()
             .then(data => {
                 if(data.status === 400) {
-                    return navigate('admin/login');
+                    return navigate('/admin/login');
                 } 
                 
                 console.log(data.message, 'Payload:', data.payload)
